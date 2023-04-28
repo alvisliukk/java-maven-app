@@ -15,6 +15,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <distributionManagement>
+		<repository>
+			<id>nexus-rel-upload</id>
+			<name>Internal Releases</name>
+			<url>https://nexus.cbc-rep-1.sa-demo.beescloud.com/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snap-upload</id>
+			<name>Internal Snapshot Releases</name>
+			<url>https://nexus.cbc-rep-1.sa-demo.beescloud.com/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>13</maven.compiler.source>
