@@ -33,6 +33,9 @@ pipeline {
             steps {
                 script {
                     bat 'git add version.txt'
+                    bat 'git config --global user.email "alvis@example.com"'
+  				    bat 'git config --global user.name "Alvis Liu"'
+                    
                     bat 'git commit -m "Update version.txt with current timestamp"'
                     bat 'git push'
                 }
