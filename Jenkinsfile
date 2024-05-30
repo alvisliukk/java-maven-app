@@ -33,11 +33,13 @@ pipeline {
         stage('Commit and Push') {
             steps {
                 script {
-                    bat 'git config --global --add safe.directory C:/Users/kk_tu/.jenkins/workspace/maven_pipeline'
-                    bat 'git config --global user.email "alvis@example.com"'
-  				    bat 'git config --global user.name "Alvis Liu"'
-                    bat 'git add version.txt'
+                
+                	def localBranch = "C:\Users\kk_tu\git\java-maven-app\";
                     
+                    bat 'move version.txt ${localBranch}'
+                    bat 'git add ${localBranch}\version.txt'
+                    
+                    bat 'cd ${localBranch}'
                     bat 'git commit -m "Update version.txt with current timestamp"'
                     bat 'git push origin master'
                 }
