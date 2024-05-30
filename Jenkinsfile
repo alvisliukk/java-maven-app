@@ -17,6 +17,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 checkout scm
+                bat 'git pull origin master'
             }
         }
         
@@ -32,12 +33,13 @@ pipeline {
         stage('Commit and Push') {
             steps {
                 script {
-                    bat 'git add version.txt'
+                    bat 'git config --global --add safe.directory C:/Users/kk_tu/.jenkins/workspace/maven_pipeline'
                     bat 'git config --global user.email "alvis@example.com"'
   				    bat 'git config --global user.name "Alvis Liu"'
+                    bat 'git add version.txt'
                     
                     bat 'git commit -m "Update version.txt with current timestamp"'
-                    bat 'git push'
+                    bat 'git push origin master'
                 }
             }
         }
