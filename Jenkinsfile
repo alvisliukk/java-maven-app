@@ -34,10 +34,10 @@ pipeline {
             steps {
                 script {
                 
-                	def localBranch = "C:\Users\kk_tu\git\java-maven-app\"
+                	def localBranch = "C:\\Users\\kk_tu\\git\\java-maven-app\\"
                     
                     bat 'move version.txt ${localBranch}'
-                    bat 'git add ${localBranch}\version.txt'
+                    bat 'git add ${localBranch}\\version.txt'
                     
                     bat 'cd ${localBranch}'
                     bat 'git commit -m "Update version.txt with current timestamp"'
